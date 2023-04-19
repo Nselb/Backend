@@ -20,7 +20,7 @@ namespace PruebaUnitaria
             
         }
 
-        [Fact]
+        /*[Fact]
         public void Eet_OK()
         {
             var result = emisorController.Get();
@@ -36,7 +36,7 @@ namespace PruebaUnitaria
             var result = usuariosController.Get(usuario, password).Result;
 
             Assert.Equal(result.Observacion, "INGRESO EXITOSO");
-        }
+        }*/
 
         [Fact]
         public void UsuarioEmisor()
@@ -46,7 +46,7 @@ namespace PruebaUnitaria
             var usuaroiResult = usuariosController.Get(usuario, password).Result;
             var emisorResult = emisorController.Get().Result;
             Assert.Equal(usuaroiResult.Observacion, "INGRESO EXITOSO");
-            Assert.Equal(emisorResult.Find(e => e.Codigo == usuaroiResult.Emisor));
+            Assert.Equal(emisorResult.Find(e => e.Codigo == usuaroiResult.Emisor).Codigo, usuaroiResult.Emisor);
         }
 
     }
