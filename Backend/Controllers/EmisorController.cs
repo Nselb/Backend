@@ -9,20 +9,18 @@ namespace Backend.Controllers
     public class EmisorController : ControllerBase
     {
         [HttpGet]
-        public async Task<List<Emisor>> Get()
+        public async Task<List<Emisor>?> Get()
         {
-            using (var client = new HttpClient())
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri("http://apiservicios.ecuasolmovsa.com:3009/api/");
+            var responseTask = client.GetAsync($"Varios/GetEmisor");
+            var result = responseTask.Result;
+            List<Emisor>? emisores = new();
+            if (result.IsSuccessStatusCode)
             {
-                client.BaseAddress = new Uri("http://apiservicios.ecuasolmovsa.com:3009/api/");
-                var responseTask = client.GetAsync($"Varios/GetEmisor");
-                var result = responseTask.Result;
-                List<Emisor> emisores = new();
-                if (result.IsSuccessStatusCode)
-                {
-                    emisores = await result.Content.ReadFromJsonAsync<List<Emisor>>();
-                }
-                return emisores;
+                emisores = await result.Content.ReadFromJsonAsync<List<Emisor>?>();
             }
+            return emisores;
         }
     }
 }

@@ -13,22 +13,20 @@ namespace BackendAja.Controllers
     public class UsuariosController : ControllerBase
     {
         [HttpGet("{id}/{contrasena}")]
-        public async Task<Usuario> Get(int id, string contrasena)
+        public async Task<Usuario?> Get(int id, string contrasena)
         {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("http://apiservicios.ecuasolmovsa.com:3009/api/");
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri("http://apiservicios.ecuasolmovsa.com:3009/api/");
 
-                var responseTask = client.GetAsync($"Usuarios?usuario={id}&password={contrasena}");
-                var result = responseTask.Result;
-                Usuario usuario = null;
-                if (result.IsSuccessStatusCode)
-                {
-                    var coso = await result.Content.ReadFromJsonAsync<List<Usuario>>();
-                    usuario = coso.FirstOrDefault();
-                }
-                return usuario;
+            var responseTask = client.GetAsync($"Usuarios?usuario={id}&password={contrasena}");
+            var result = responseTask.Result;
+            Usuario? usuario = null;
+            if (result.IsSuccessStatusCode)
+            {
+                List<Usuario?>? coso = await result.Content.ReadFromJsonAsync<List<Usuario?>>();
+                usuario = coso?.FirstOrDefault();
             }
+            return usuario;
         }
     }
 }
