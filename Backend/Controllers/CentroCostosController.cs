@@ -40,12 +40,12 @@ namespace Backend.Controllers
             }
             return centro;
         }
-        [HttpDelete("Delete/{codigo}")]
-        public async Task<CentroCostos?> Delete(int codigo)
+        [HttpDelete("Delete/{codigo}/{descripcion}")]
+        public async Task<CentroCostos?> Delete(int codigo,string descripcion)
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri(uri);
-            var responseTask = client.GetAsync($"CentroCostosDelete?codigocentrocostos={codigo}&descripcioncentrocostos=a");
+            var responseTask = client.GetAsync($"CentroCostosDelete?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}");
             var result = responseTask.Result;
             CentroCostos? centro = new();
             if (result.IsSuccessStatusCode)

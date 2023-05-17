@@ -20,7 +20,7 @@ namespace PruebaUnitaria
             
         }
 
-        /*[Fact]
+        [Fact]
         public void Eet_OK()
         {
             var result = emisorController.Get();
@@ -35,8 +35,8 @@ namespace PruebaUnitaria
             string password = "5004U";
             var result = usuariosController.Get(usuario, password).Result;
 
-            Assert.Equal(result.Observacion, "INGRESO EXITOSO");
-        }*/
+            Assert.Equal("INGRESO EXITOSO", result.Observacion);
+        }
 
         [Fact]
         public void UsuarioEmisor()
