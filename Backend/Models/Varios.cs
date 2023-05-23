@@ -25,4 +25,10 @@
         public string CodigoMovimientoExce { get; set; }
         public string DesripMovimientoExce { get; set; }
     }
+    public class InfoGeneral
+    {
+        public string Codigo { get; set; }
+        public string Descripcion { get; set; }
+    }
+
 }

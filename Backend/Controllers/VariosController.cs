@@ -18,12 +18,12 @@ namespace Backend.Controllers
             client.BaseAddress = new Uri(uri);
             var responseTask = client.GetAsync($"TipoOperacion");
             var result = responseTask.Result;
-            List<TipoOperacion?>? centros = new();
+            List<TipoOperacion?>? tipoOperacion = new();
             if (result.IsSuccessStatusCode)
             {
-                centros = await result.Content.ReadFromJsonAsync<List<TipoOperacion?>?>();
+                tipoOperacion = await result.Content.ReadFromJsonAsync<List<TipoOperacion?>?>();
             }
-            return centros;
+            return tipoOperacion;
         }
         [HttpGet("MovimientosExcepcion1y2")]
         public async Task<List<MovimientosExcepcion1y2?>?> GetMovimientos1y2()
@@ -32,12 +32,12 @@ namespace Backend.Controllers
             client.BaseAddress = new Uri(uri);
             var responseTask = client.GetAsync($"MovimientosExcepcion1y2");
             var result = responseTask.Result;
-            List<MovimientosExcepcion1y2?>? centros = new();
+            List<MovimientosExcepcion1y2?>? excepcion1Y2 = new();
             if (result.IsSuccessStatusCode)
             {
-                centros = await result.Content.ReadFromJsonAsync<List<MovimientosExcepcion1y2?>?>();
+                excepcion1Y2 = await result.Content.ReadFromJsonAsync<List<MovimientosExcepcion1y2?>?>();
             }
-            return centros;
+            return excepcion1Y2;
         }
         [HttpGet("MovimientosExcepcion3")]
         public async Task<List<MovimientosExcepcion3?>?> GetMovimientos3()
@@ -46,12 +46,12 @@ namespace Backend.Controllers
             client.BaseAddress = new Uri(uri);
             var responseTask = client.GetAsync($"MovimientosExcepcion3");
             var result = responseTask.Result;
-            List<MovimientosExcepcion3?>? centros = new();
+            List<MovimientosExcepcion3?>? excepcion3 = new();
             if (result.IsSuccessStatusCode)
             {
-                centros = await result.Content.ReadFromJsonAsync<List<MovimientosExcepcion3?>?>();
+                excepcion3 = await result.Content.ReadFromJsonAsync<List<MovimientosExcepcion3?>?>();
             }
-            return centros;
+            return excepcion3;
         }
         [HttpGet("AfectaIESS")]
         public async Task<List<TrabaAfectaIESS?>?> AfectaIESS()
@@ -60,12 +60,12 @@ namespace Backend.Controllers
             client.BaseAddress = new Uri(uri);
             var responseTask = client.GetAsync($"TrabaAfectaIESS");
             var result = responseTask.Result;
-            List<TrabaAfectaIESS?>? centros = new();
+            List<TrabaAfectaIESS?>? iess = new();
             if (result.IsSuccessStatusCode)
             {
-                centros = await result.Content.ReadFromJsonAsync<List<TrabaAfectaIESS?>?>();
+                iess = await result.Content.ReadFromJsonAsync<List<TrabaAfectaIESS?>?>();
             }
-            return centros;
+            return iess;
         }
         [HttpGet("AfectaImpuestoRenta")]
         public async Task<List<TrabAfecImpuestoRenta?>?> AfectaImpuestoRenta()
@@ -74,12 +74,124 @@ namespace Backend.Controllers
             client.BaseAddress = new Uri(uri);
             var responseTask = client.GetAsync($"TrabAfecImpuestoRenta");
             var result = responseTask.Result;
-            List<TrabAfecImpuestoRenta?>? centros = new();
+            List<TrabAfecImpuestoRenta?>? impuestoRentas = new();
             if (result.IsSuccessStatusCode)
             {
-                centros = await result.Content.ReadFromJsonAsync<List<TrabAfecImpuestoRenta?>?>();
+                impuestoRentas = await result.Content.ReadFromJsonAsync<List<TrabAfecImpuestoRenta?>?>();
             }
-            return centros;
+            return impuestoRentas;
+        }
+        [HttpGet("TipoTrabajador")]
+        public async Task<List<InfoGeneral?>?> TipoTrabajador()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"TipoTrabajador");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("Genero")]
+        public async Task<List<InfoGeneral?>?> Genero()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"Genero");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("EstadoTrabajador")]
+        public async Task<List<InfoGeneral?>?> EstadoTrabajador()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"EstadoTrabajador");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("TipoContrato")]
+        public async Task<List<InfoGeneral?>?> TipoContrato()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"TipoContrato");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("TipoCese")]
+        public async Task<List<InfoGeneral?>?> TipoCese()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"TipoCese");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("EstadoCivil")]
+        public async Task<List<InfoGeneral?>?> EstadoCivil()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"EstadoCivil");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("EsReingreso")]
+        public async Task<List<InfoGeneral?>?> EsReingreso()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"EsReingreso");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("TipoCuenta")]
+        public async Task<List<InfoGeneral?>?> TipoCuenta()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"TipoCuenta");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
         }
     }
 }
