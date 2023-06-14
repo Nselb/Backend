@@ -49,7 +49,7 @@ namespace Backend.Controllers
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri(uri);
-            var responseTask = client.GetAsync($"MovimientoPlanillaInsert?conceptos={cc.Concepto}&prioridad={cc.Prioridad}&tipooperacion={cc.TipoOperacion}&cuenta1={cc.Cuenta1}&cuenta2={cc.Cuenta2}&cuenta3={cc.Cuenta3}&cuenta4={cc.Cuenta4}&MovimientoExcepcion1={cc.MovimientoExcepcion1}&MovimientoExcepcion2={cc.MovimientoExcepcion2}&MovimientoExcepcion3={cc.MovimientoExcepcion3}&Traba_Aplica_iess={cc.Aplica_iess}&Aplica_Proy_Renta={cc.Aplica_imp_renta}&Empresa_Afecta_Iess={cc.Empresa_Afecta_Iess}");
+            var responseTask = client.GetAsync($"MovimientoPlanillaInsert?conceptos={cc.Concepto}&prioridad={cc.Prioridad}&tipooperacion={cc.TipoOperacion}&cuenta1={cc.Cuenta1}&cuenta2={cc.Cuenta2}&cuenta3={cc.Cuenta3}&cuenta4={cc.Cuenta4}&MovimientoExcepcion1={cc.MovimientoExcepcion1}&MovimientoExcepcion2={cc.MovimientoExcepcion2}&MovimientoExcepcion3={cc.MovimientoExcepcion3}&Traba_Aplica_iess={cc.Aplica_iess}&Traba_Proyecto_imp_renta={cc.Aplica_imp_renta}&Empresa_Afecta_Iess={cc.Empresa_Afecta_Iess}");
             var result = responseTask.Result;
             MovimientoPlanilla? centro = new();
             if (result.IsSuccessStatusCode)
@@ -66,7 +66,7 @@ namespace Backend.Controllers
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri(uri);
-            var responseTask = client.GetAsync($"MovimientoPlanillaUpdate?codigoplanilla={cc.CodigoConcepto}&conceptos={cc.Concepto}&prioridad={cc.Prioridad}&tipooperacion={cc.TipoOperacion}&cuenta1={cc.Cuenta1}&cuenta2={cc.Cuenta2}&cuenta3={cc.Cuenta3}&cuenta4={cc.Cuenta4}&MovimientoExcepcion1={cc.MovimientoExcepcion1}&MovimientoExcepcion2={cc.MovimientoExcepcion2}&MovimientoExcepcion3={cc.MovimientoExcepcion3}&Traba_Aplica_iess={cc.Aplica_iess}&Aplica_Proy_Renta={cc.Aplica_imp_renta}&Empresa_Afecta_Iess={cc.Empresa_Afecta_Iess}");
+            var responseTask = client.GetAsync($"MovimientoPlanillaUpdate?codigoplanilla={cc.CodigoConcepto}&conceptos={cc.Concepto}&prioridad={cc.Prioridad}&tipooperacion={cc.TipoOperacion}&cuenta1={cc.Cuenta1}&cuenta2={cc.Cuenta2}&cuenta3={cc.Cuenta3}&cuenta4={cc.Cuenta4}&MovimientoExcepcion1={cc.MovimientoExcepcion1}&MovimientoExcepcion2={cc.MovimientoExcepcion2}&MovimientoExcepcion3={cc.MovimientoExcepcion3}&Traba_Aplica_iess={cc.Aplica_iess}&Traba_Proyecto_imp_renta={cc.Aplica_imp_renta}&Empresa_Afecta_Iess={cc.Empresa_Afecta_Iess}");
             var result = responseTask.Result;
             MovimientoPlanilla? centro = new();
             if (result.IsSuccessStatusCode)
