@@ -25,12 +25,12 @@
         public string Tipo_Cese { get; set; }
         public string EstadoCivil { get; set; }
         public string TipodeComision { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public DateTime FechaIngreso { get; set; }
-        public DateTime FechaCese { get; set; }
+        public string FechaNacimiento { get; set; }
+        public string FechaIngreso { get; set; }
+        public string FechaCese { get; set; }
         public int PeriododeVacaciones { get; set; }
-        public DateTime FechaReingreso { get; set; }
-        public DateTime Fecha_Ult_Actualizacion { get; set; }
+        public string FechaReingreso { get; set; }
+        public string Fecha_Ult_Actualizacion { get; set; }
         public string EsReingreso { get; set; }
         public object BancoCTA_CTE { get; set; }
         public string Tipo_Cuenta { get; set; }
