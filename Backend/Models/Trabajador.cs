@@ -32,17 +32,12 @@
         public string FechaReingreso { get; set; }
         public string Fecha_Ult_Actualizacion { get; set; }
         public string EsReingreso { get; set; }
-        public object BancoCTA_CTE { get; set; }
         public string Tipo_Cuenta { get; set; }
-        public int RSV_Indem_Acumul { get; set; }
-        public int Año_Ult_Rsva_Indemni { get; set; }
-        public int Mes_Ult_Rsva_Indemni { get; set; }
         public int FormaCalculo13ro { get; set; }
         public int FormaCalculo14ro { get; set; }
         public int BoniComplementaria { get; set; }
         public int BoniEspecial { get; set; }
         public int Remuneracion_Minima { get; set; }
-        public int CuotaCuentaCorriente { get; set; }
         public string Fondo_Reserva { get; set; }
         public object Mensaje { get; set; }
     }
