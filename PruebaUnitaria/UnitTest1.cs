@@ -10,14 +10,13 @@ namespace PruebaUnitaria
 
         private readonly EmisorController emisorController;
         private readonly UsuariosController usuariosController;
-        private readonly Services _services;
+        private readonly TrabajadoresController trabajadoresController;
 
         public UnitTest1()
         {
-            
-            emisorController = new EmisorController();
-            usuariosController = new UsuariosController();
-            
+            trabajadoresController = new ();
+            emisorController = new ();
+            usuariosController = new ();
         }
 
         [Fact]
@@ -48,6 +47,10 @@ namespace PruebaUnitaria
             Assert.Equal(usuaroiResult.Observacion, "INGRESO EXITOSO");
             Assert.Equal(emisorResult.Find(e => e.Codigo == usuaroiResult.Emisor).Codigo, usuaroiResult.Emisor);
         }
-
+        [Fact]
+        public void VerificarCedula()
+        {
+            Assert.True(TrabajadoresController.VerificarCedula("1721236353"));
+        }
     }
 }
