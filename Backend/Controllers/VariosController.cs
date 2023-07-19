@@ -193,5 +193,103 @@ namespace Backend.Controllers
             }
             return info;
         }
+        [HttpGet("Ocupaciones")]
+        public async Task<List<InfoGeneral?>?> Ocupaciones()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"Ocupaciones");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("CategoriaOcupacional")]
+        public async Task<List<Info?>?> CategoriaOcupacional()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"CategoriaOcupacional");
+            var result = responseTask.Result;
+            List<Info?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<Info?>?>();
+            }
+            return info;
+        }
+        [HttpGet("NivelSalarial")]
+        public async Task<List<Info?>?> NivelSalarial()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"NivelSalarial");
+            var result = responseTask.Result;
+            List<Info?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<Info?>?>();
+            }
+            return info;
+        }
+        [HttpGet("PeriodoVacaciones")]
+        public async Task<List<InfoGeneral?>?> PeriodoVacaciones()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"PeriodoVacaciones");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("TipoComision")]
+        public async Task<List<InfoGeneral?>?> TipoComision()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"TipoComision");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("DecimoTerceroDecimoCuarto")]
+        public async Task<List<InfoGeneral?>?> DecimoTerceroDecimoCuarto()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"DecimoTerceroDecimoCuarto");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
+        [HttpGet("FondoReserva")]
+        public async Task<List<InfoGeneral?>?> FondoReserva()
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(uri);
+            var responseTask = client.GetAsync($"FondoReserva");
+            var result = responseTask.Result;
+            List<InfoGeneral?>? info = new();
+            if (result.IsSuccessStatusCode)
+            {
+                info = await result.Content.ReadFromJsonAsync<List<InfoGeneral?>?>();
+            }
+            return info;
+        }
     }
 }
